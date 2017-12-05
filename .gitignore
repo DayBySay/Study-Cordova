@@ -3,8 +3,6 @@
 !/platforms/.gitkeep
 /plugins
 !/plugins/.gitkeep
-/www
-!/www/.gitkeep
 resources/signing
 src/plugins/*/src/ios/Config.swift
 src/plugins/*/src/android/Config.java
