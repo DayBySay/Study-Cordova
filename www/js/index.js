@@ -20,6 +20,7 @@ var app = {
     // Application Constructor
     initialize: function() {
         document.addEventListener('deviceready', this.onDeviceReady.bind(this), false);
+
     },
 
     // deviceready Event Handler
@@ -27,6 +28,14 @@ var app = {
     // Bind any cordova events here. Common events are:
     // 'pause', 'resume', etc.
     onDeviceReady: function() {
+
+        androidIDFA.getAdInfo(function(info){
+            console.log(info.idfa);
+            console.log(info.limitAd);
+            window.fluctAdParam = {'ifa': info.idfa, 'lmt': info.limitAd, 'bundle': info.bundle};
+        }, function(){
+            console.log("error");
+        });
         this.receivedEvent('deviceready');
     },
 
@@ -44,3 +53,4 @@ var app = {
 };
 
 app.initialize();
+
